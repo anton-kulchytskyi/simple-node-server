@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const userModel = require("./models");
 
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT || 3001;
+// const port = 3001;
 
 app.use(cors());
 
@@ -32,4 +33,4 @@ app.get('/details', async (req, res) => {
     res.send(user);
 });
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
+app.listen(PORT, () => console.log(`Hello world app listening on port ${PORT}!`))
